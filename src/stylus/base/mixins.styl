@@ -13,24 +13,18 @@ clear()
 	clear 						both
 
 clearfix()
-	*zoom:1
+	*zoom						1
 
 	&:before,
 	&:after
-		content:""
-		display:table
+		content					""
+		display					table
 
 	&:after
-		clear:both
+		clear					both
 
 .group
 	clearfix()
-
-margin(direction)
-	margin-{direction}			$base-spacing-unit
-	
-padding(direction)
-	padding-{direction}			$base-spacing-unit
 
 // Typography
 

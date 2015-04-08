@@ -100,14 +100,14 @@ gulp.task "jade", ->
 			keywords: pkg.keywords
 	.pipe gulp.dest Config.build
 
-	gulp.src Config.src + "jade/includes/*.jade"
-	.pipe plugins.plumber()
-	.pipe plugins.jade
-		pretty: true
-		data:
-			description: pkg.description
-			keywords: pkg.keywords
-	.pipe gulp.dest Config.build + "partials"
+	# gulp.src Config.src + "jade/includes/*.jade"
+	# .pipe plugins.plumber()
+	# .pipe plugins.jade
+	# 	pretty: true
+	# 	data:
+	# 		description: pkg.description
+	# 		keywords: pkg.keywords
+	# .pipe gulp.dest Config.build + "partials"
 
 # Optimise images
 
@@ -149,7 +149,7 @@ gulp.task "watch", ->
 	gulp.watch [
 		Config.build + "scripts/**/*.js"
 		Config.build + "styles/**/*.css"
-		Config.build + "*.html"
+		Config.build + "**/*.html"
 		Config.build + "images/**/*.{jpg,png,gif,svg}"
 	], notifyLivereload
 
@@ -184,7 +184,7 @@ notifyLivereload = (event) ->
 
 gulp.task "default", ->
 	Config.publish = false
-	run ["coffeescript", "stylus", "jade", "images", "copy-files"], "critical", "watch", "server"
+	run ["coffeescript", "stylus", "jade", "images", "copy-files"], "watch", "server"
 
 gulp.task "deploy", ->
 	Config.publish = true
@@ -193,4 +193,4 @@ gulp.task "deploy", ->
 	run "jade"
 	run "images"
 	run "copy-files"
-	run "critical"
+	# run "critical"
