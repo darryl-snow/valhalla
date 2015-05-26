@@ -100,15 +100,6 @@ gulp.task "jade", ->
 			keywords: pkg.keywords
 	.pipe gulp.dest Config.build
 
-	# gulp.src Config.src + "jade/includes/*.jade"
-	# .pipe plugins.plumber()
-	# .pipe plugins.jade
-	# 	pretty: true
-	# 	data:
-	# 		description: pkg.description
-	# 		keywords: pkg.keywords
-	# .pipe gulp.dest Config.build + "partials"
-
 # Optimise images
 
 gulp.task "images", ->
@@ -140,12 +131,10 @@ gulp.task "copy-files", ->
 	gulp.src Config.src + "images/*.xml"
 	.pipe gulp.dest Config.build + "images"
 
-	# gulp.src Config.src + "sitemap.xml"
-	# .pipe gulp.dest Config.build
-
 # Watch for changes to files
 
 gulp.task "watch", ->
+
 	gulp.watch [
 		Config.build + "scripts/**/*.js"
 		Config.build + "styles/**/*.css"
@@ -153,11 +142,24 @@ gulp.task "watch", ->
 		Config.build + "images/**/*.{jpg,png,gif,svg}"
 	], notifyLivereload
 
-	gulp.watch Config.src + "coffeescript/**/*.coffee", ["coffeescript"]
-	gulp.watch Config.src + "stylus/**/*.styl", ["stylus"]
-	gulp.watch Config.src + "jade/**/*.jade", ["jade"]
-	gulp.watch Config.src + "images/**/*.{jpg,png,gif,svg}", ["images"]
-	gulp.watch Config.src + "*", ["copy-files"]
+	plugins.watch Config.src + "coffeescript/**/*.coffee", ->
+		gulp.start "coffeescript"
+
+	plugins.watch Config.src + "stylus/**/*.styl", ->
+		gulp.start "stylus"
+
+	plugins.watch Config.src + "stylus/**/*.styl", ->
+		gulp.start "stylus"
+
+	plugins.watch Config.src + "jade/**/*.jade", ->
+		gulp.start "jade"
+
+	plugins.watch Config.src + "images/**/*.{jpg,png,gif,svg}", ->
+		gulp.start "images"
+
+	plugins.watch Config.src + "*", ->
+		gulp.start "copy-files"
+
 	gulp.watch Config.src + "images/favicons/*.xml", ["copy-files"]
 
 # Run a test server
