@@ -88,6 +88,18 @@ gulp.task "critical", ->
 		.pipe plugins.clean
 			force: true
 
+# Remove unused CSS
+
+gulp.task "purify", ->
+
+	gulp.src Config.build + "styles/*.css", read: false
+	.pipe plugins.size
+		showFiles: true
+	.pipe plugins.purify Config.build + "**/*.html"
+	.pipe plugins.size
+		showFiles: true
+	.pipe gulp.dest Config.build + "styles"
+
 # Compile Jade
 
 gulp.task "jade", ->
@@ -184,7 +196,7 @@ notifyLivereload = (event) ->
 
 gulp.task "default", ->
 	Config.publish = false
-	run ["coffeescript", "stylus", "jade", "images", "copy-files"], "watch", "server"
+	run ["coffeescript", "stylus", "jade", "images", "copy-files"], "purify", "watch", "server"
 
 gulp.task "deploy", ->
 	Config.publish = true
@@ -193,4 +205,5 @@ gulp.task "deploy", ->
 	run "jade"
 	run "images"
 	run "copy-files"
-	# run "critical"
+	run "critical"
+	run "purify"
