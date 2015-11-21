@@ -2,9 +2,10 @@
 
 Starter template for front-end projects using:
 * Jade
-* Stylus
-* CoffeeScript (with Browserify)
+* Stylus (with automatically generated styleguide)
+* CoffeeScript
 * Gulp
+* React
 
 ## Prerequisites
 
@@ -17,27 +18,15 @@ npm install -g gulp
 
 ## Development instructions
 
-### Install Dependencies
+* gulp                  (development build)
+* gulp reset            (rm /public)
+* gulp prod             (production build)
+* gulp dev              (build and run dev server at localhost:8080)
+* gulp test             (run unit tests)
+* gulp accessibility    (check against WCAG2 guidelines)
+* gulp pagespeed        (test against Google pagespeed)
 
-```
-npm install
-bower install
-```
+## TODO
 
-### Run Dev Environment
-
-```
-gulp
-```
-
-<!-- ### Test
-
-```
-gulp test
-``` -->
-
-### Prepare Assets for Deployment
-
-```
-gulp deploy
-```
+* Lint coffeescript
+* Implement unit testing
