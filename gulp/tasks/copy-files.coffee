@@ -6,3 +6,6 @@ module.exports = (gulp, $, config) ->
 
 		gulp.src config.paths.fonts.entry
 		.pipe gulp.dest config.paths.fonts.dest
+
+		gulp.src config.paths.source + "/*.txt"
+		.pipe gulp.dest config.paths.build
