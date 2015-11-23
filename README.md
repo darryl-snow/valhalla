@@ -6,6 +6,7 @@ Starter template for front-end projects using:
 * CoffeeScript
 * Gulp
 * React
+* Unit testing with Karma & Jasmine
 
 ## Prerequisites
 
@@ -29,4 +30,3 @@ npm install -g gulp
 ## TODO
 
 * Lint coffeescript
-* Implement unit testing

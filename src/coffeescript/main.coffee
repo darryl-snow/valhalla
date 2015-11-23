@@ -11,12 +11,12 @@ padding: 5px
 """
 
 # Non-react component
-MyComponent = require "./components/my-component.coffee"
+MyComponent = require "./components/my-component/my-component.coffee"
 
 React = require "react"
 ReactDOM = require "react-dom"
 
-ReactComponent = require "./components/react-component.coffee"
+ReactComponent = require "./components/react-component/react-component.coffee"
 
 MyApp = React.createClass
 	render: ->

@@ -11,6 +11,7 @@ module.exports = (gulp, $, config) ->
 			$.util.log "* gulp reset            (rm /public)"
 			$.util.log "* gulp prod             (production build)"
 			$.util.log "* gulp dev              (build and run dev server at localhost:8080)"
+			$.util.log "* gulp test             (run unit tests)"
 			$.util.log "* gulp accessibility    (check against WCAG2 guidelines)"
 			$.util.log "* gulp pagespeed        (test against Google pagespeed)"
 			$.util.log "**********************************************"
