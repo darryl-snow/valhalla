@@ -1,5 +1,7 @@
 "use strict"
 
+notifier = require "node-notifier"
+
 module.exports = (gulp, $, config) ->
 
 	gulp.task "jade", ->
@@ -11,4 +13,7 @@ module.exports = (gulp, $, config) ->
 			data:
 				description: config.description
 				keywords: config.keywords
+		.on "error", (err) ->
+			notifier.notify
+				message: "Error: " + err.message
 		.pipe gulp.dest config.paths.html.dest

@@ -1,4 +1,5 @@
 "use strict"
+notifier = require "node-notifier"
 
 module.exports = (gulp, $, config) ->
 
@@ -8,6 +9,9 @@ module.exports = (gulp, $, config) ->
 		.pipe $.plumber()
 		.pipe $.sourcemaps.init()
 		.pipe $.stylus()
+		.on "error", (err) ->
+			notifier.notify
+				message: "Error: " + err.message
 		.pipe $.sourcemaps.write()
 		.pipe $.autoprefixer "last 2 versions", "> 1%"
 		.pipe $.rename config.names.css.compiled
