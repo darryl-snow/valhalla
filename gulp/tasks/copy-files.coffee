@@ -9,3 +9,6 @@ module.exports = (gulp, $, config) ->
 
 		gulp.src config.paths.source + "/*.txt"
 		.pipe gulp.dest config.paths.build
+
+		gulp.src config.paths.source + "/*.json"
+		.pipe gulp.dest config.paths.build
