@@ -2,6 +2,7 @@
 
 browserify = require "browserify"
 buffer = require "vinyl-buffer"
+# coffeelint = require "coffeelint-cjsx"
 notifier = require "node-notifier"
 source = require "vinyl-source-stream"
 
@@ -11,12 +12,10 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "coffeescript", ->
 
-		# # disable coffeelint until it can support cjsx!
 		# gulp.src config.paths.js.entry + "**/*.coffee"
 		# .pipe $.plumber()
-		# .pipe coffeeReactTransform().on "error", $.util.log
-		# .pipe $.coffeelint()
-		# .pipe $.coffeelint.reporter()
+		# .pipe $.coffeelintCjsx()
+		# .pipe $.coffeelintCjsx.reporter()
 
 		b = browserify
 			entries: config.paths.js.entry + config.names.js.source
@@ -27,6 +26,7 @@ module.exports = (gulp, $, config) ->
 			.on "error", (err) ->
 				notifier.notify
 					message: "Error: " + err.message
+				$.util.log $.util.colors.red err.message
 				@.end()
 			.pipe source config.names.js.compiled
 			.pipe $.plumber()

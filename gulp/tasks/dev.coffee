@@ -87,3 +87,6 @@ module.exports = (gulp, $, config) ->
 
 		$.watch config.paths.lib.entry + "**/*.{js,css}", ->
 			gulp.start "libs"
+
+		$.watch config.paths.source + "*.{txt,json}", ->
+			gulp.start "copy-files"

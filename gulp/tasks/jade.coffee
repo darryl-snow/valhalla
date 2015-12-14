@@ -16,4 +16,5 @@ module.exports = (gulp, $, config) ->
 		.on "error", (err) ->
 			notifier.notify
 				message: "Error: " + err.message
+			$.util.log $.util.colors.red err.message
 		.pipe gulp.dest config.paths.html.dest
