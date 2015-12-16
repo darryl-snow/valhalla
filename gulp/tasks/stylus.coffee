@@ -7,7 +7,7 @@ module.exports = (gulp, $, config) ->
 
 		gulp.src config.paths.css.entry + config.names.css.source
 		.pipe $.plumber()
-		.pipe $.sourcemaps.init()
+		.pipe $.if config.env is "dev", $.sourcemaps.init()
 		.pipe $.stylus()
 		.on "error", (err) ->
 			notifier.notify
@@ -18,7 +18,7 @@ module.exports = (gulp, $, config) ->
 		.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */"
 		.pipe $.size
 			showFiles: true
-		.pipe $.sourcemaps.write()
+		.pipe $.if config.env is "dev", $.sourcemaps.write "./"
 		.pipe gulp.dest config.paths.css.dest
 
 		gulp.src config.paths.css.entry + "**/*.styl"

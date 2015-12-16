@@ -4,6 +4,7 @@ pkg	= require "../package.json"
 
 module.exports =
 	description: pkg.description
+	env: "dev"
 	keywords: pkg.keywords
 	libs: [] #put here the filenames of any 3rd party libraries, e.g. "bootstrap/dist/css/bootstrap.css"
 	livereloadPort: 35729
