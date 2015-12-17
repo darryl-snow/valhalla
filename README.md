@@ -27,6 +27,8 @@ npm install -g gulp
 * gulp accessibility    (check against WCAG2 guidelines)
 * gulp pagespeed        (test against Google pagespeed)
 
+(Note: production build will not include source maps, will minify all static assets, strip out unused css, and inline above-the-fold css, as well as add cache-busting hashes to asset file names)
+
 ## TODO
 
 * Lint coffeescript

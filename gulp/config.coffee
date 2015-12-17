@@ -13,6 +13,9 @@ module.exports =
 			compiled: "main.css"
 			minified: "main.min.css"
 			source: "main.styl"
+		html:
+			compiled: "index.html"
+			source: "index.jade"
 		js:
 			compiled: "main.js"
 			minified: "main.min.js"
