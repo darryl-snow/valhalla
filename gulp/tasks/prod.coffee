@@ -2,14 +2,11 @@
 
 critical = require "critical"
 notifier = require "node-notifier"
+runSequence = require "run-sequence"
 
 module.exports = (gulp, $, config) ->
 
-	gulp.task "prod-build", ->
-
-		config.env = "prod"
-
-	gulp.task "prod", ["prod-build", "build"], ->
+	gulp.task "prod-optimise", (callback) ->
 
 		# usemin to go through html and replace references to all assets with minified and hashed versions
 		gulp.src config.paths.html.dest + "/*.html"
@@ -33,30 +30,36 @@ module.exports = (gulp, $, config) ->
 		.pipe $.rev.manifest()
 		.pipe gulp.dest config.paths.css.dest
 
-		setTimeout ->
+	gulp.task "prod-inline-css", (callback) ->
 
-			manifest = require("../../public/styles/rev-manifest.json")
-			cssFile = manifest["styles/main.min.css"]
+		manifest = require("../../public/styles/rev-manifest.json")
+		cssFile = manifest["styles/main.min.css"]
 
-			critical.generate
-				base: config.paths.build + "/"
-				css: [config.paths.build + "/" + cssFile]
-				dest: config.paths.build + "/" + config.names.html.compiled
-				extract: false
-				height: 900
-				inline: true
-				minify: true
-				src: config.names.html.compiled
-				width: 1300
-			, (err, output) ->
+		critical.generate
+			base: config.paths.build + "/"
+			css: [config.paths.build + "/" + cssFile]
+			dest: config.paths.build + "/" + config.names.html.compiled
+			extract: false
+			height: 900
+			inline: true
+			minify: true
+			src: config.names.html.compiled
+			width: 1300
+		, (err, output) ->
 
-				$.util.log $.util.colors.green "Critical CSS inlined!"
+			$.util.log $.util.colors.green "Critical CSS inlined!"
 
-				if err
+			if err
 
-					notifier.notify
-						message: "Error: " + err.message
+				notifier.notify
+					message: "Error: " + err.message
 
-					$.util.log $.util.colors.red err.message
+				$.util.log $.util.colors.red err.message
 
-		, 10000
+			callback()
+
+	gulp.task "prod", ->
+
+		config.env = "prod"
+
+		runSequence "reset", "build", "prod-optimise", "prod-inline-css"
