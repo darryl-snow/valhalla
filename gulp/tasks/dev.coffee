@@ -38,7 +38,7 @@ module.exports = (gulp, $, config) ->
 			config.paths.css.dest + "/**/*.css"
 			config.paths.fonts.dest + "/**/*.{woff,ttf,otf,svg}"
 			config.paths.html.dest + "/*.html"
-			config.paths.images.dest + "/**/*.{jpg,png,gif,svg,xml}"
+			config.paths.images.dest + "/**/*.{jpg,png,gif,svg,webp,xml}"
 			config.paths.js.dest + "/**/*.js"
 			config.paths.lib.dest + "/*.{js,css}"
 		], notifyLivereload
@@ -85,7 +85,7 @@ module.exports = (gulp, $, config) ->
 						keywords: config.keywords
 				.pipe gulp.dest config.paths.html.dest
 
-		$.watch config.paths.images.entry + "**/*.{jpg,png,gif,svg,xml}", ->
+		$.watch config.paths.images.entry + "**/*.{jpg,png,gif,svg,webp,xml}", ->
 			gulp.start "images"
 
 		$.watch config.paths.lib.entry + "**/*.{js,css}", ->
