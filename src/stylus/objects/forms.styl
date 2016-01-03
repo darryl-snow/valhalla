@@ -3,10 +3,10 @@
 // @state :disabled, --disabled - Dims the input when disabled
 // @state .input--block - Makes the input full-width
 // @markup
-// <input class="o-input" id="input" placeholder="placeholder text" type="text"></input>
-// <input class="o-input" disabled id="input" placeholder="placeholder text" type="text"></input>
-// <input class="o-input o-input--block" id="input" placeholder="placeholder text" type="text"></input>
-.o-input
+// <input class="o-form__input" id="input" placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input" disabled id="input" placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input o-form__input--block" id="input" placeholder="placeholder text" type="text"></input>
+.o-form__input
 	background		$white
 	border			1px solid $light-grey-1
 	box-shadow		none
@@ -17,12 +17,12 @@
 
 	&:disabled,
 	&[disabled],
-	&--disabled
+	&.is-disabled
 		background	$light-grey-1
 		cursor		not-allowed !important
 
 		& ~ label,
-		& ~ .o-label
+		& ~ .o-form__label
 			cursor	not-allowed !important
 
 	&--block
@@ -31,6 +31,6 @@
 // @name Label
 // @description Standard label for form inputs
 // @markup
-// <label class="o-label" for="input">Form field:</label>
-.o-label
+// <label class="o-form__label" for="input">Form field:</label>
+.o-form__label
 	cursor			pointer
