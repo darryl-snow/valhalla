@@ -1,21 +1,21 @@
 {
-  "author": "Your Name",
-  "background_color": "#ffffff",
+  "author": "Darryl Snow",
+  "background_color": "#000000",
   "default_locale": "en",
-  "description": "",
+  "description": "Plundering Kunming's thirst for good quality craft beer",
   "display": "browser",
-  "homepage_url": "https://url.com",
+  "homepage_url": "https://valhallacraftbrewery.com",
   "icons": [
     {
       "src": "images/icon.png",
-      "sizes": "300x300",
+      "sizes": "180x180",
       "type": "image/png"
     }
   ],
   "installs_allowed_from": ["*"],
   "lang": "en",
   "manifest_version": "1.0",
-  "name": "Project Name",
+  "name": "Valhalla",
   "start_url": "/",
   "version": "0.0.0"
 }
