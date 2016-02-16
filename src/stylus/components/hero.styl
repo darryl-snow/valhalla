@@ -1,0 +1,35 @@
+.c-hero
+	relative()
+	background 		url(../images/hero.png) no-repeat top center
+	background-size cover
+	box-shadow 		inset 0 0 15rem rgba($black, 1)
+	color			$white
+	height			100vh
+	min-height 		20rem
+	overflow 		hidden
+
+	&:before
+		absolute()
+		background 	rgba($black, 0.4)
+		bottom		0
+		content 	""
+		height		100%
+		left		0
+		right 		0
+		top			0
+		width		100%
+
+	&__content
+		@extend .u-centred
+		vertical-centre()
+
+	&__logo
+		display 	block
+		height 		auto
+		margin		1rem auto
+		max-height 	30vh
+		max-width 	40%
+
+	&__heading
+		color		$white
+

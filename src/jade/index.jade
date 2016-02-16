@@ -1,23 +1,64 @@
 extends templates/master
 
 block title
-	| Project
+	| Valhalla Craft Brewery
 
 block styles
 
 block content
 
-	h1 Project
+	section.c-hero
 
-	h2 Component:
-	include components/component
+		.c-hero__content
 
-	h2 React Component:
-	.js-my-app
+			img.c-hero__logo(src="/images/valhalla-logo.svg", alt="哇哈啦标志 Valhalla logo")
 
-	a(href="/styles", title="Go to the styleguide")
-		small styleguide
+			h1.c-hero__heading Vallhalla 哇哈啦
+				.subheading Craft Brewery 精酿啤酒厂
+					.subheading Kunming 昆明, Yunnan 云南, China 中国
 
-	+svg("arrow-left")
+	footer.c-footer
+		
+		.c-footer__map
+			
+			a(href="http://j.map.baidu.com/nBRD8", title="打开百度地图 Click to open Baidu Map")
+				img(src="/images/map.png", alt="哇哈啦地图 Map to Valhalla")
+			
+		.c-footer__contact-details
+		
+			p 昆明市五华区普吉路47号秘境M60文化创意园18D
 
-block scripts
+			p
+				a(href="tel:+8618787444489", title="给我们打电话 Phone us") (+86) 187-8744-4489
+				
+			ul.c-footer__social-media
+			
+				li.c-footer__social-media__item
+				
+					a(href="https://www.facebook.com/valhallacraftbrewery", title="Follow us on Facebook")
+					
+						svg.o-icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-facebook")
+						
+					
+				li.c-footer__social-media__item
+						
+					a(href="https://twitter.com/ValhallaKM", title="Follow us on Twitter")
+
+						svg.o-icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-twitter")
+					
+				li.c-footer__social-media__item
+						
+					a(href="http://weibo.com/u/5859866626", title="在微博关注我们 Follow us on Weibo")
+						
+						svg.o-icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-weibo")
+					
+				li.c-footer__social-media__item.c-footer__social-media__item--weixin
+						
+					img(src="/images/qr-code.png", alt="Follow us on Wechat")
+					
+			p(role="contentinfo")
+			
+				small &copy; 2016 Valhalla Craft Brewery

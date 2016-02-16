@@ -4,7 +4,7 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "copy-files", ->
 
-		gulp.src config.paths.fonts.entry
+		gulp.src config.paths.fonts.entry + "/*"
 		.pipe gulp.dest config.paths.fonts.dest
 
 		gulp.src config.paths.source + "/*.txt"

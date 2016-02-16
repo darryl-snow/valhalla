@@ -1,11 +1,4 @@
 /* TEAM */
 
-[Role]: [name]
-Contact: [email]
-[Social Media Network]: [username/link]
-
-/* THANKS */
-
-[Role]: [name]
-Contact: [email]
-[Social Media Network]: [username/link]
+Developer/Designer: Darryl Snow
+Contact: darryl@yourweb.expert

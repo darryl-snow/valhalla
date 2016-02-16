@@ -20,7 +20,7 @@ module.exports =
 			compiled: "main.js"
 			minified: "main.min.js"
 			source: "main.coffee"
-		lib: 
+		lib:
 			compiled: "lib.min.js"
 		project: pkg.name
 	paths:
@@ -30,7 +30,7 @@ module.exports =
 			entry: "./src/stylus/"
 		fonts:
 			dest: "./public/styles/fonts"
-			entry: "./src/styles/fonts"
+			entry: "./src/fonts"
 		html:
 			dest: "./public"
 			entry: "./src/jade/"

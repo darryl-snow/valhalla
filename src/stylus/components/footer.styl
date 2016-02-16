@@ -1,0 +1,42 @@
+.c-footer
+	row()
+	background 				$dark-grey-2
+	color					$medium-grey
+	padding 				$base-spacing-unit
+
+	&__map
+		col(6)
+		padding-right 		1rem
+
+		img
+			filter 			saturate(0%)
+			height			auto
+			width			100%
+
+	&__contact-details
+		col(6)
+		font-family 		"Helvetica Neue", Helvetica, Arial, sans-serif
+		font-size 			0.75rem
+
+		a
+			color			$white
+			text-decoration none
+
+	&__social-media
+		inline-list()
+		unstyled-list()
+
+		a
+			display 		block
+			margin			0 0.5rem
+			opacity 		0.5
+			transition 		$fast-transition
+
+			+ActiveFocusHover()
+				opacity 	1
+
+		&__item
+
+			&--weixin
+				display 	block !important
+				margin		0.5rem

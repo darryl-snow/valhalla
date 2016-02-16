@@ -1,11 +1,11 @@
 {
-  "name": "project-template",
+  "name": "valhalla-brewery",
   "version": "0.0.0",
   "main": "index.html",
-  "description": "Front-End templates for Project",
+  "description": "Plundering Kunming's thirst for good quality, fresh craft beer!",
   "keywords": "",
-  "author": "Your Name <you@yoursite.com>",
-  "homepage": "http://yoursite.com",
+  "author": "Darryl S/now <darryl@yourweb.expert>",
+  "homepage": "http://valhallacraftbrewery.com",
   "dependencies": {
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
