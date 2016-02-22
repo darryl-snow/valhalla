@@ -5,8 +5,13 @@
 	padding 				$base-spacing-unit
 
 	&__map
-		col(6)
-		padding-right 		1rem
+		col(12)
+		padding-bottom 		1rem
+
+		+bp($screen-sm-min)
+			col(6)
+			padding-right 	1rem
+			padding-bottom 	0
 
 		img
 			filter 			saturate(0%)
@@ -14,9 +19,14 @@
 			width			100%
 
 	&__contact-details
-		col(6)
+		col(12)
 		font-family 		"Helvetica Neue", Helvetica, Arial, sans-serif
 		font-size 			0.75rem
+		text-align 			center
+
+		+bp($screen-sm-min)
+			col(6)
+			text-align 		left
 
 		a
 			color			$white
@@ -40,3 +50,6 @@
 			&--weixin
 				display 	block !important
 				margin		0.5rem
+
+				img
+					width	40%

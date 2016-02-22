@@ -15,3 +15,6 @@ module.exports = (gulp, $, config) ->
 
 		gulp.src config.paths.source + "/*.xml"
 		.pipe gulp.dest config.paths.build
+
+		gulp.src config.paths.source + "/CNAME"
+		.pipe gulp.dest config.paths.build

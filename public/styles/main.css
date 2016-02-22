@@ -1,4 +1,4 @@
-/* valhalla-brewery : 0.0.0 : Tue Feb 16 2016 17:27:40 GMT+0800 (CST) */@font-face {
+/* valhalla-brewery : 0.0.0 : Tue Feb 23 2016 00:18:58 GMT+0800 (CST) */@font-face {
   font-family: "Viking";
   src: url("fonts/VIKING-N.woff");
 }
@@ -468,8 +468,17 @@ svg {
 .c-footer__map {
   margin-left: 0.52083%;
   margin-right: 0.52083%;
-  width: 48.95892%;
-  padding-right: 1rem;
+  width: 98.95949999999999%;
+  padding-bottom: 1rem;
+}
+@media (min-width: 54.857142857142854em) {
+  .c-footer__map {
+    margin-left: 0.52083%;
+    margin-right: 0.52083%;
+    width: 48.95892%;
+    padding-right: 1rem;
+    padding-bottom: 0;
+  }
 }
 .c-footer__map img {
   -webkit-filter: saturate(0%);
@@ -480,9 +489,18 @@ svg {
 .c-footer__contact-details {
   margin-left: 0.52083%;
   margin-right: 0.52083%;
-  width: 48.95892%;
+  width: 98.95949999999999%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
+  text-align: center;
+}
+@media (min-width: 54.857142857142854em) {
+  .c-footer__contact-details {
+    margin-left: 0.52083%;
+    margin-right: 0.52083%;
+    width: 48.95892%;
+    text-align: left;
+  }
 }
 .c-footer__contact-details a {
   color: #fff;
@@ -513,6 +531,9 @@ svg {
 .c-footer__social-media__item--weixin {
   display: block !important;
   margin: 0.5rem;
+}
+.c-footer__social-media__item--weixin img {
+  width: 40%;
 }
 .c-hero {
   position: relative;
